@@ -211,13 +211,19 @@ Le facteur de confusion se trouve dans les volumes. La Cohorte A est portée par
 ### 2.4 — Recommandations PM :
 
 * Arrêter de prendre des décisions sur les taux de conversion globaux
+
 Pourquoi : Le paradoxe de Simpson qu'on a trouvé montre bien que les chiffres globaux masquent la réalité. La cohorte B a l'air moins bonne globalement juste parce qu’elle a reçu bien plus de trafic sur mobile (1 750 visites contre seulement 754 sur desktop), un canal qui convertit moins bien par nature.
+
 Action : Le PM doit obligatoirement analyser les fonctionnalités en croisant le filtre Cohorte × Device dans Metabase. Il faut interdire la validation d'une feature sans regarder ce qui se passe séparément sur desktop et sur mobile.
 
 * Lancer un test A/B dédié exclusivement à l'onboarding Mobile
+
 Pourquoi : Le Mobile représente le plus gros volume d'utilisateurs de l'application, mais son taux de conversion est bas (autour de 54 %). En plus, notre graphique Funnel Global montre que la plus grosse baisse se fait lors de la soumission du formulaire final (on chute à 39.26 % de réussite sur l'étape task_toggle).
+
 Action : Je recommande de lancer un test A/B réservé uniquement aux utilisateurs sur smartphone. L'idée est de tester un formulaire d'onboarding mobile ultra-court (moins de champs à remplir et des boutons plus gros) pour casser cette friction sur petit écran et faire remonter le taux de conversion mobile vers les standards du desktop.
 
 * Retravailler l'expérience utilisateur de la Cohorte B sur Desktop
+
 Pourquoi : Les chiffres montrent que sur le Desktop, la Cohorte B est légèrement moins performante que la Cohorte A (71.88 % de conversion contre 73.87 %, soit une baisse nette de 1.99 %).
+
 Action : Je recommande de planifier un atelier produit pour identifier quel élément d'interface (UI) a dégradé l'expérience utilisateur par rapport à la version A , afin de corriger cette perte de 2 points de conversion avant tout nouveau test.
