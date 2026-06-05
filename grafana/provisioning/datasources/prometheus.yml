@@ -1,0 +1,23 @@
+apiVersion: 1
+
+datasources:
+  - name: Prometheus
+    uid: prometheus           # UID explicite, sinon Grafana en génère un random
+    type: prometheus           # et le dashboard JSON ne peut pas s'y référer.
+    access: proxy
+    url: http://prometheus:9090
+    isDefault: true
+    editable: true
+
+  - name: Postgres-TaskFlow
+    uid: postgres-taskflow
+    type: postgres
+    url: postgres:5432
+    user: postgres
+    secureJsonData:
+      password: postgres
+    jsonData:
+      database: taskflow
+      sslmode: disable
+      postgresVersion: 1600
+    editable: true

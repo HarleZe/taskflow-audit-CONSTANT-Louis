@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TaskFlow — démo cours télémétrie</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header>
+    <h1>TaskFlow</h1>
+    <p class="tagline">Mini-app à instrumenter — fil rouge ESGI</p>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Mes tâches</h2>
+      <form id="add-form" data-track="task_form_submit">
+        <input type="text" id="task-input" placeholder="Nouvelle tâche..." required />
+        <button type="submit" data-track="task_create_click">Ajouter</button>
+      </form>
+      <ul id="tasks"></ul>
+    </section>
+
+    <section class="card">
+      <h2>Stats fictives (pour scroll)</h2>
+      <p>Faites défiler pour déclencher des events scroll-depth (TP1).</p>
+      <div class="filler"></div>
+      <button data-track="cta_secondary_click">Action secondaire</button>
+    </section>
+  </main>
+
+  <!-- Bandeau consentement RGPD (TP1) -->
+  <div id="consent" class="consent hidden">
+    <p>Nous utilisons des données d'usage pour améliorer le produit.</p>
+    <button id="consent-accept" data-track="consent_accept">Accepter</button>
+    <button id="consent-refuse" data-track="consent_refuse">Refuser</button>
+  </div>
+
+  <script type="module" src="/app.js"></script>
+  <script type="module" src="/tracker.js"></script>
+</body>
+</html>
